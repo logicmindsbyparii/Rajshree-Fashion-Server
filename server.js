@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Matches your Vite frontend origin port
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173', // Uses Vercel frontend URL in production
   credentials: true
 }));
 app.use(express.json());
